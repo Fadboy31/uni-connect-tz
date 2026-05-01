@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNI-CONNECT TZ 🚀 | Your Ultimate Academic & Career Launch Hub</title>
+    <title>UNI-CONNECT TZ V2 | Academic & Career Launch Hub</title>
     <meta name="description" content="Tunakusaidia kuingia chuo, kupata mkopo, na kuanza career bila stress. TCU, HESLB, CV Writing, Ajira Portal & more.">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #0066FF; --secondary: #00C853; --accent: #FF6B35;
-            --dark: #1a1a2e; --light: #f8f9fa; --gray: #6c757d;
+            --primary: #0b5cff; --secondary: #05a660; --accent: #ff7a1a;
+            --ink: #101827; --dark: #111827; --light: #f7fafc; --gray: #64748b;
+            --line: #dbe5f0; --surface: #ffffff; --surface-soft: #f1f6fb;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6; color: var(--dark); background: #fff; overflow-x: hidden;
+            line-height: 1.6; color: var(--ink); background: #fbfdff; overflow-x: hidden;
         }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse {
@@ -28,8 +29,9 @@
         .stagger-3 { animation-delay: 0.3s; opacity: 0; }
         .header {
             position: sticky; top: 0; z-index: 1000;
-            background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-            color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.92); color: var(--ink);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+            backdrop-filter: blur(18px);
             animation: slideInFromTop 0.5s ease-out;
         }
         .header-content {
@@ -37,49 +39,64 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 800; transition: transform 0.3s; }
+        .logo i { color: var(--primary); }
         .logo:hover { transform: scale(1.05); }
         .whatsapp-btn-header {
-            background: var(--secondary); color: white; padding: 0.75rem 1.5rem;
-            border-radius: 50px; text-decoration: none; font-weight: 600;
+            background: var(--ink); color: white; padding: 0.75rem 1.5rem;
+            border-radius: 999px; text-decoration: none; font-weight: 700;
             display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,197,83,0.3);
+            box-shadow: 0 10px 25px rgba(15,23,42,0.18);
         }
-        .whatsapp-btn-header:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,197,83,0.4); }
+        .whatsapp-btn-header:hover { transform: translateY(-2px); background: var(--secondary); box-shadow: 0 14px 28px rgba(5,166,96,0.28); }
         .hero {
-            position: relative; background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-            color: white; padding: 4rem 1.5rem; text-align: center; overflow: hidden;
+            position: relative; color: white; padding: 5.5rem 1.5rem 4rem; overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(8,36,79,0.9), rgba(10,92,255,0.82)),
+                url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=80') center/cover;
         }
         .hero::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(120,119,198,0.3), transparent 50%);
+            background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 42px 42px; opacity: 0.35;
         }
         .hero::after {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 70% 80%, rgba(74,222,128,0.2), transparent 50%);
+            content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+            background: linear-gradient(180deg, transparent, #fbfdff);
         }
-        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 10; }
-        .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
-        .hero .tagline { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; color: rgba(191, 219, 254, 1); }
-        .hero .subtitle { font-size: 1.1rem; margin-bottom: 2rem; color: rgba(224, 242, 254, 1); line-height: 1.6; }
+        .hero-content { max-width: 1040px; margin: 0 auto; position: relative; z-index: 10; text-align: left; }
+        .version-badge {
+            display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem;
+            border: 1px solid rgba(255,255,255,0.32); border-radius: 999px;
+            background: rgba(255,255,255,0.12); font-weight: 800; font-size: 0.85rem; margin-bottom: 1rem;
+        }
+        .hero h1 { max-width: 780px; font-size: 3.7rem; font-weight: 900; margin-bottom: 1.25rem; line-height: 1.02; letter-spacing: 0; }
+        .hero .tagline { font-size: 1.25rem; margin-bottom: 1rem; font-weight: 800; color: #bef4d2; }
+        .hero .subtitle { max-width: 720px; font-size: 1.12rem; margin-bottom: 2rem; color: rgba(240,249,255,0.94); line-height: 1.7; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
         .cta-primary {
             background: linear-gradient(135deg, var(--accent), #FF4500); color: white;
-            padding: 1.2rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 50px;
+            padding: 1rem 1.6rem; font-size: 1rem; font-weight: 800; border-radius: 999px;
             text-decoration: none; display: inline-flex; align-items: center; gap: 0.7rem;
             transition: all 0.3s; box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
         }
         .cta-primary:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 30px rgba(255, 107, 53, 0.6); }
-        .stats { background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%); padding: 3rem 1.5rem; }
+        .cta-secondary {
+            color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem;
+            font-weight: 800; padding: 1rem 1.25rem; border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.36); background: rgba(255,255,255,0.12);
+        }
+        .stats { background: #fbfdff; padding: 0 1.5rem 3rem; position: relative; z-index: 20; }
         .stats-grid {
             max-width: 1200px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;
         }
         .stat-item {
-            background: white; padding: 2rem; border-radius: 20px; text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid #e3f2fd; transition: all 0.3s;
+            background: white; padding: 1.5rem; border-radius: 8px; text-align: left;
+            box-shadow: 0 18px 45px rgba(15,23,42,0.09); border: 1px solid var(--line); transition: all 0.3s;
         }
-        .stat-item:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 8px 30px rgba(0,102,255,0.2); }
-        .stat-icon { width: 48px; height: 48px; color: var(--primary); margin: 0 auto 1rem; }
-        .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
+        .stat-item:hover { transform: translateY(-8px); box-shadow: 0 24px 55px rgba(15,23,42,0.12); }
+        .stat-icon { width: 36px; height: 36px; color: var(--primary); margin-bottom: 1rem; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 0.25rem; }
         .stat-label { color: var(--gray); font-weight: 500; }
         .section-header { text-align: center; margin-bottom: 3rem; }
         .section-header h2 {
@@ -90,10 +107,12 @@
         }
         .section-header p { font-size: 1.2rem; color: var(--gray); }
         .services { padding: 5rem 1.5rem; max-width: 1280px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.25rem; }
         .service-card {
-            position: relative; background: white; border-radius: 24px; padding: 2rem;
-            border: 2px solid #e5e7eb; transition: all 0.3s; overflow: hidden;
+            position: relative; background: white; border-radius: 8px; padding: 1.5rem;
+            border: 1px solid var(--line); transition: all 0.3s; overflow: hidden;
+            box-shadow: 0 12px 34px rgba(15,23,42,0.06);
+            display: flex; flex-direction: column;
         }
         .service-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
@@ -101,14 +120,14 @@
             transform: scaleX(0); transition: transform 0.3s;
         }
         .service-card:hover {
-            transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--primary);
+            transform: translateY(-8px); box-shadow: 0 22px 48px rgba(15,23,42,0.12); border-color: rgba(11,92,255,0.35);
         }
         .service-card:hover::before { transform: scaleX(1); }
-        .service-card.featured { border: 3px solid var(--accent); box-shadow: 0 10px 30px rgba(255,107,53,0.2); }
+        .service-card.featured { border: 2px solid var(--accent); box-shadow: 0 18px 45px rgba(255,122,26,0.16); }
         .featured-badge {
             position: absolute; top: -10px; right: -10px;
             background: linear-gradient(135deg, var(--accent), #FF4500);
-            color: white; padding: 0.5rem 1rem; border-radius: 50px;
+            color: white; padding: 0.5rem 1rem; border-radius: 999px;
             font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(255,107,53,0.4);
         }
         .service-icon {
@@ -126,16 +145,23 @@
         .gradient-7 { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
         .gradient-8 { background: linear-gradient(135deg, #ec4899, #f43f5e); }
         .gradient-9 { background: linear-gradient(135deg, #f59e0b, #f97316); }
-        .service-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark); }
-        .service-desc { color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6; }
-        .service-price { font-size: 1.75rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.5rem; }
-        .old-price { text-decoration: line-through; color: #9ca3af; font-size: 1.1rem; margin-left: 0.5rem; }
-        .service-cta {
-            display: block; text-align: center; padding: 0.875rem 1.5rem; border-radius: 50px;
-            font-weight: 700; color: white; text-decoration: none; transition: all 0.3s; margin-top: 1rem;
+        .service-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.85rem; color: var(--dark); }
+        .service-desc { color: var(--gray); margin-bottom: 1.25rem; line-height: 1.65; }
+        .service-order-note {
+            display: flex; align-items: flex-start; gap: 0.65rem; color: var(--ink);
+            background: var(--surface-soft); border: 1px solid var(--line);
+            border-radius: 8px; padding: 0.85rem; font-weight: 700; margin-bottom: 1rem;
         }
-        .service-cta:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .benefits { padding: 5rem 1.5rem; background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fce7f3 100%); }
+        .service-order-note i { width: 19px; height: 19px; color: var(--secondary); flex: 0 0 auto; margin-top: 0.15rem; }
+        .service-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: auto; }
+        .service-cta {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+            text-align: center; padding: 0.875rem 1rem; border-radius: 8px;
+            font-weight: 800; color: white; text-decoration: none; transition: all 0.3s;
+        }
+        .service-cta.email-cta { color: var(--ink); background: white; border: 1px solid var(--line); }
+        .service-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,0.16); }
+        .benefits { padding: 5rem 1.5rem; background: linear-gradient(135deg, #eff6ff 0%, #ecfdf5 50%, #fff7ed 100%); }
         .benefits-grid {
             max-width: 1280px; margin: 2rem auto 0;
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
@@ -195,6 +221,7 @@
         }
         .cta-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
         .cta-section p { font-size: 1.3rem; margin-bottom: 2rem; color: rgba(191, 219, 254, 1); }
+        .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
         .footer { background: var(--dark); color: white; padding: 3rem 1.5rem 1.5rem; }
         .footer-content {
             max-width: 1280px; margin: 0 auto;
@@ -222,14 +249,19 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero { padding: 4.5rem 1rem 3rem; }
+            .hero h1 { font-size: 2.35rem; }
             .hero .tagline { font-size: 1.25rem; }
+            .hero-actions, .cta-actions { align-items: stretch; flex-direction: column; }
+            .cta-primary, .cta-secondary { width: 100%; justify-content: center; }
             .section-header h2 { font-size: 2rem; }
             .services-grid, .testimonial-grid, .benefits-grid { grid-template-columns: 1fr; }
+            .service-actions { grid-template-columns: 1fr; }
             .whatsapp-btn-header span { display: none; }
             .logo { font-size: 1.2rem; }
             .download-form { flex-direction: column; }
             .download-form input { min-width: 100%; }
+            .whatsapp-float { width: 56px; height: 56px; right: 18px; bottom: 18px; }
         }
     </style>
 </head>
@@ -247,17 +279,27 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
+            <div class="version-badge">
+                <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                Version 2 is live
+            </div>
             <h1 class="fade-in-up">🎓 From Confusion → Chuo → Career Execution 🌍</h1>
             <p class="tagline fade-in-up stagger-1">Your Ultimate Academic & Career Launch Hub 2026/27</p>
             <p class="subtitle fade-in-up stagger-2">
                 Hapa hatupeani tu info — tunakusaidia kufanya <strong style="color: #fef08a;">COMPLETE EXECUTION</strong> ya kila process muhimu bila stress 💼✨
             </p>
-            <a href="https://wa.me/255710852376?text=Nataka%20msaada%20wa%20UNI-CONNECT%20TZ" class="cta-primary fade-in-up stagger-3">
+            <div class="hero-actions fade-in-up stagger-3">
+            <a href="https://wa.me/255710852376?text=Nataka%20msaada%20wa%20UNI-CONNECT%20TZ" class="cta-primary">
                 <i data-lucide="rocket" style="width: 24px; height: 24px;"></i>
                 Anza Sasa - Tuma WhatsApp
             </a>
+            <a href="mailto:uniconnecttz255@gmail.com?subject=UNI-CONNECT%20TZ%20Service%20Order" class="cta-secondary">
+                <i data-lucide="mail" style="width: 22px; height: 22px;"></i>
+                Order by Email
+            </a>
+            </div>
         </div>
     </section>
 
@@ -293,8 +335,11 @@
                 </div>
                 <h3 class="service-title">TCU Application Support</h3>
                 <p class="service-desc">Step-by-step guidance kuchagua course sahihi, kujaza maombi correctly na kuongeza chances zako za admission.</p>
-                <div class="service-price">TSh 15,000 - 25,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20TCU%20application" class="service-cta gradient-1">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20TCU%20application" class="service-cta gradient-1"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20TCU%20Application%20Support" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-2">
@@ -302,8 +347,11 @@
                 </div>
                 <h3 class="service-title">HESLB Loan Application</h3>
                 <p class="service-desc">Vigezo, document preparation mpaka submission — tunakuhakikisha una-apply correctly na strategically.</p>
-                <div class="service-price">TSh 20,000 - 30,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20HESLB%20application" class="service-cta gradient-2">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20HESLB%20application" class="service-cta gradient-2"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20HESLB%20Loan%20Application" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-3">
@@ -311,8 +359,11 @@
                 </div>
                 <h3 class="service-title">RITA Verification</h3>
                 <p class="service-desc">Birth & Death Certificates verification na application process ya haraka, sahihi, bila errors.</p>
-                <div class="service-price">TSh 10,000 - 20,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20RITA%20verification" class="service-cta gradient-3">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20RITA%20verification" class="service-cta gradient-3"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20RITA%20Verification" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-4">
@@ -320,8 +371,11 @@
                 </div>
                 <h3 class="service-title">Professional CV Writing</h3>
                 <p class="service-desc">CV yenye kutoka clean, modern, na yenye nguvu ya kuvutia employers. ATS-optimized na industry standards.</p>
-                <div class="service-price">TSh 20,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20CV%20writing%20service" class="service-cta gradient-4">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20CV%20writing%20service" class="service-cta gradient-4"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Professional%20CV%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-5">
@@ -329,8 +383,11 @@
                 </div>
                 <h3 class="service-title">Ajira Portal Setup & Job Applications</h3>
                 <p class="service-desc">Tunafungua account yako ya Ajira Portal na kukusaidia ku-apply kazi professionally na smart.</p>
-                <div class="service-price">TSh 5,000 - 10,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20Ajira%20Portal%20setup" class="service-cta gradient-5">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20Ajira%20Portal%20setup" class="service-cta gradient-5"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Ajira%20Portal%20Setup" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-6">
@@ -338,8 +395,11 @@
                 </div>
                 <h3 class="service-title">Field Report Writing</h3>
                 <p class="service-desc">Kwa vyuo & internships — tunasaidia kuandika field reports zenye structure sahihi na academic standards.</p>
-                <div class="service-price">TSh 15,000 - 30,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20Field%20Report%20writing" class="service-cta gradient-6">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20Field%20Report%20writing" class="service-cta gradient-6"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Field%20Report%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-7">
@@ -347,8 +407,11 @@
                 </div>
                 <h3 class="service-title">Research Proposal Writing</h3>
                 <p class="service-desc">Tunakusaidia kuandika proposal yenye direction, clarity, na academic strength kwa vyuo.</p>
-                <div class="service-price">TSh 25,000 - 50,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20Research%20Proposal%20help" class="service-cta gradient-7">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20Research%20Proposal%20help" class="service-cta gradient-7"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Research%20Proposal%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon gradient-8">
@@ -356,18 +419,24 @@
                 </div>
                 <h3 class="service-title">Course Selection & Career Guidance</h3>
                 <p class="service-desc">Hujui usome nini? Tunakusaidia kuchagua course yenye ROI (return on investment) sio kubahatisha.</p>
-                <div class="service-price">TSh 10,000 - 25,000</div>
-                <a href="https://wa.me/255710852376?text=Ninahitaji%20career%20guidance" class="service-cta gradient-8">Anza Sasa</a>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Ninahitaji%20career%20guidance" class="service-cta gradient-8"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Course%20Selection%20and%20Career%20Guidance" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
             <div class="service-card featured">
-                <div class="featured-badge">BEST DEAL</div>
+                <div class="featured-badge">MOST REQUESTED</div>
                 <div class="service-icon gradient-9">
                     <i data-lucide="flame" style="width: 32px; height: 32px; color: white;"></i>
                 </div>
                 <h3 class="service-title">Full Package Deal 🎁</h3>
-                <p class="service-desc"><strong>TCU + HESLB + CV Writing + Career Guidance</strong><br>Save 20%! Tunakupa full support from application mpaka career start.</p>
-                <div class="service-price">TSh 90,000 <span class="old-price">TSh 120,000</span></div>
-                <a href="https://wa.me/255710852376?text=Nataka%20Full%20Package%20Deal" class="service-cta gradient-9">Anza Sasa</a>
+                <p class="service-desc"><strong>TCU + HESLB + CV Writing + Career Guidance</strong><br>Tunakupa full support from application mpaka career start in one coordinated package.</p>
+                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
+                <div class="service-actions">
+                    <a href="https://wa.me/255710852376?text=Nataka%20Full%20Package%20Deal" class="service-cta gradient-9"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
+                    <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Full%20Package%20Support" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
+                </div>
             </div>
         </div>
     </section>
@@ -474,10 +543,16 @@
     <section class="cta-section">
         <h2>🚀 Ready to Start Your Journey?</h2>
         <p>Don't waste time in confusion. Let's make it happen — TOGETHER.</p>
+        <div class="cta-actions">
         <a href="https://wa.me/255710852376?text=Nina%20swali%20kuhusu%20huduma%20zenu" class="cta-primary">
             <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
             Tuma WhatsApp Message Sasa
         </a>
+        <a href="mailto:uniconnecttz255@gmail.com?subject=UNI-CONNECT%20TZ%20Service%20Order" class="cta-secondary">
+            <i data-lucide="mail" style="width: 22px; height: 22px;"></i>
+            Email Your Order
+        </a>
+        </div>
     </section>
 
     <footer class="footer">
