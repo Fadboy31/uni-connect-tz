@@ -38,8 +38,15 @@
             max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 800; transition: transform 0.3s; }
-        .logo i { color: var(--primary); }
+        .logo { display: flex; align-items: center; gap: 0.65rem; font-size: 1.5rem; font-weight: 950; transition: transform 0.3s; }
+        .logo i { color: var(--secondary); }
+        .brand-mark { display: inline-flex; align-items: center; gap: 0.55rem; }
+        .tz-flag { font-size: 1.55rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(15,23,42,0.14)); }
+        .brand-text {
+            color: var(--primary); font-weight: 950; letter-spacing: 0;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.65);
+        }
+        .brand-text .brand-accent { color: var(--secondary); }
         .logo:hover { transform: scale(1.05); }
         .whatsapp-btn-header {
             background: var(--ink); color: white; padding: 0.75rem 1.5rem;
@@ -107,6 +114,13 @@
         }
         .section-header p { font-size: 1.2rem; color: var(--gray); }
         .services { padding: 5rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+        .order-strip {
+            max-width: 920px; margin: -1.5rem auto 2rem; padding: 1rem 1.25rem;
+            display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+            color: var(--ink); background: var(--surface-soft); border: 1px solid var(--line);
+            border-radius: 8px; font-weight: 750; text-align: center;
+        }
+        .order-strip i { width: 20px; height: 20px; color: var(--secondary); flex: 0 0 auto; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.25rem; }
         .service-card {
             position: relative; background: white; border-radius: 8px; padding: 1.5rem;
@@ -147,12 +161,6 @@
         .gradient-9 { background: linear-gradient(135deg, #f59e0b, #f97316); }
         .service-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.85rem; color: var(--dark); }
         .service-desc { color: var(--gray); margin-bottom: 1.25rem; line-height: 1.65; }
-        .service-order-note {
-            display: flex; align-items: flex-start; gap: 0.65rem; color: var(--ink);
-            background: var(--surface-soft); border: 1px solid var(--line);
-            border-radius: 8px; padding: 0.85rem; font-weight: 700; margin-bottom: 1rem;
-        }
-        .service-order-note i { width: 19px; height: 19px; color: var(--secondary); flex: 0 0 auto; margin-top: 0.15rem; }
         .service-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: auto; }
         .service-cta {
             display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
@@ -255,6 +263,7 @@
             .hero-actions, .cta-actions { align-items: stretch; flex-direction: column; }
             .cta-primary, .cta-secondary { width: 100%; justify-content: center; }
             .section-header h2 { font-size: 2rem; }
+            .order-strip { align-items: flex-start; text-align: left; }
             .services-grid, .testimonial-grid, .benefits-grid { grid-template-columns: 1fr; }
             .service-actions { grid-template-columns: 1fr; }
             .whatsapp-btn-header span { display: none; }
@@ -270,7 +279,10 @@
         <div class="header-content">
             <div class="logo">
                 <i data-lucide="rocket" style="width: 32px; height: 32px;"></i>
-                <span>UNI-CONNECT TZ</span>
+                <span class="brand-mark">
+                    <span class="tz-flag" aria-label="Tanzania flag" role="img">🇹🇿</span>
+                    <span class="brand-text">UNI-CONNECT <span class="brand-accent">TZ</span></span>
+                </span>
             </div>
             <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20TCU%20application" class="whatsapp-btn-header">
                 <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
@@ -328,6 +340,10 @@
             <h2>🎯 Huduma Zetu Kuu</h2>
             <p>Chagua huduma unayohitaji — tunakusaidia kila hatua</p>
         </div>
+        <div class="order-strip">
+            <i data-lucide="send"></i>
+            <span>Select a service, then order through WhatsApp or email. We will confirm your next steps directly.</span>
+        </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon gradient-1">
@@ -335,7 +351,6 @@
                 </div>
                 <h3 class="service-title">TCU Application Support</h3>
                 <p class="service-desc">Step-by-step guidance kuchagua course sahihi, kujaza maombi correctly na kuongeza chances zako za admission.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20TCU%20application" class="service-cta gradient-1"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20TCU%20Application%20Support" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -347,7 +362,6 @@
                 </div>
                 <h3 class="service-title">HESLB Loan Application</h3>
                 <p class="service-desc">Vigezo, document preparation mpaka submission — tunakuhakikisha una-apply correctly na strategically.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20HESLB%20application" class="service-cta gradient-2"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20HESLB%20Loan%20Application" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -359,7 +373,6 @@
                 </div>
                 <h3 class="service-title">RITA Verification</h3>
                 <p class="service-desc">Birth & Death Certificates verification na application process ya haraka, sahihi, bila errors.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20msaada%20na%20RITA%20verification" class="service-cta gradient-3"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20RITA%20Verification" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -371,7 +384,6 @@
                 </div>
                 <h3 class="service-title">Professional CV Writing</h3>
                 <p class="service-desc">CV yenye kutoka clean, modern, na yenye nguvu ya kuvutia employers. ATS-optimized na industry standards.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20CV%20writing%20service" class="service-cta gradient-4"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Professional%20CV%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -383,7 +395,6 @@
                 </div>
                 <h3 class="service-title">Ajira Portal Setup & Job Applications</h3>
                 <p class="service-desc">Tunafungua account yako ya Ajira Portal na kukusaidia ku-apply kazi professionally na smart.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20Ajira%20Portal%20setup" class="service-cta gradient-5"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Ajira%20Portal%20Setup" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -395,7 +406,6 @@
                 </div>
                 <h3 class="service-title">Field Report Writing</h3>
                 <p class="service-desc">Kwa vyuo & internships — tunasaidia kuandika field reports zenye structure sahihi na academic standards.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20Field%20Report%20writing" class="service-cta gradient-6"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Field%20Report%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -407,7 +417,6 @@
                 </div>
                 <h3 class="service-title">Research Proposal Writing</h3>
                 <p class="service-desc">Tunakusaidia kuandika proposal yenye direction, clarity, na academic strength kwa vyuo.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20Research%20Proposal%20help" class="service-cta gradient-7"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Research%20Proposal%20Writing" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -419,7 +428,6 @@
                 </div>
                 <h3 class="service-title">Course Selection & Career Guidance</h3>
                 <p class="service-desc">Hujui usome nini? Tunakusaidia kuchagua course yenye ROI (return on investment) sio kubahatisha.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Ninahitaji%20career%20guidance" class="service-cta gradient-8"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Course%20Selection%20and%20Career%20Guidance" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
@@ -432,7 +440,6 @@
                 </div>
                 <h3 class="service-title">Full Package Deal 🎁</h3>
                 <p class="service-desc"><strong>TCU + HESLB + CV Writing + Career Guidance</strong><br>Tunakupa full support from application mpaka career start in one coordinated package.</p>
-                <div class="service-order-note"><i data-lucide="message-square-text"></i><span>Place your order directly. We will confirm the next steps via WhatsApp or email.</span></div>
                 <div class="service-actions">
                     <a href="https://wa.me/255710852376?text=Nataka%20Full%20Package%20Deal" class="service-cta gradient-9"><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>WhatsApp</a>
                     <a href="mailto:uniconnecttz255@gmail.com?subject=Order%3A%20Full%20Package%20Support" class="service-cta email-cta"><i data-lucide="mail" style="width: 18px; height: 18px;"></i>Email</a>
